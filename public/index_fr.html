@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="Fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conception de site web personnel</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+    <link rel="icon" type="image/png" href="/images/portfolio.png" sizes="16x16">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Mon Portfolio</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#skills">Compétences</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+            <div class="language-options">
+                <a href="/" class="language-option">Eng</a>
+                <a href="/fr" class="language-option">Fr</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Bonjour à tous, je m'appelle</h3>
+            <h1>Yassine Lebbar</h1>
+            <h3>Je suis un <span class="jobtext">Développeur Web FullStack</span></h3>
+            <p>Merci de visiter mon portfolio. Permettez-moi de me présenter un peu plus en détail.</p>
+            <div class="social-media">
+                <a href="#"><i class='bx bx-envelope'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <a href="#" class="btn">Télécharger Mon CV</a>
+        </div>
+
+        <div class="home-img">
+            <img src="/images/shapeimg.png" class="shape" alt="Background shape )">
+            <img src="/images/portfolioimg.png" class="picture" alt="My profile picture :)">
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+            <h2 class="heading"><span>À propos de moi</span></h2>
+            <h3>Résumé Personnel</h3>
+            <p>Je suis très motivé à améliorer constamment mes compétences et à élargir mes connaissances dans le domaine. 
+               Je recherche activement des opportunités pour appliquer mon expertise et apporter une contribution significative dans 
+               un environnement professionnel. En dehors de mes activités de développement web, j'aime socialiser, 
+               regarder des sports et écouter de la musique. Le fait de socialiser me permet de me connecter avec les autres, 
+               cela m'aide à construire des relations significatives et à me ressourcer mentalement.
+            </p>
+            <h3>Parcours Professionnel</h3>
+            <p>J'ai découvert une passion pour le développement web lors de mon programme, ce qui m'a rendu déterminé à exceller et à m'améliorer en tant que développeur FullStack.
+                J'aime constamment travailler sur mes compétences et améliorer mes connaissances en utilisant des ressources en ligne et en travaillant sur divers projets personnels.
+                J'ai également effectué un stage précédent en tant que stagiaire FullStack, où j'ai travaillé à la fois sur le front-end et le back-end pour un site web 
+                d'entreprise qui stocke les dossiers des employés dans une base de données.
+            </p>
+        </div>
+        <div class="about-content">
+            <i class='bx bxs-book-alt'></i>
+            <h3>Formation Académique</h3>
+            <p>J'ai étudié la technologie de l'information et de l'informatique à l'Institut polytechnique de Kyiv, où j'ai suivi trois semestres comprenant :
+            <br><span>Logique informatique, Mathématiques avancées.</span><br><span>Génie logiciel.</span><br><span>Algorithmes et structures de données.</span>
+            <br>Actuellement, je suis dans la dernière phase de l'obtention de mon diplôme d'associé en programmation informatique au Collège Seneca.
+            Ce programme m'a permis d'acquérir une expérience pratique et d'approfondir ma compréhension des concepts de programmation grâce à des cours pertinents tels que :
+            <br><span>Outils et frameworks de programmation web.</span>
+            <br><span>Applications et services de programmation web.</span>
+            <br><span>Services de base de données - Introduction et avancés.</span>
+            <br><span>Résolution de problèmes appliquée.</span>
+            <br><span>Programmation orientée objet.</span>
+            <br><span>Introduction à UNIX/Linux.</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading"><span>Compétences techniques</span></h2>
+        
+        <div class="skills-container">
+            
+            <div class="skills-box">
+                <i class='bx bxl-mongodb' ></i>
+                <h3>Technologies de base de données</h3>
+                <p>Acquis une solide compréhension à la fois de SQL et MongoDB.
+                    Conception et gestion de bases de données relationnelles en utilisant SQL, ainsi que travailler avec des bases de données telles que MongoDB.
+                    Confiant dans ma capacité à travailler avec différentes bases de données et systèmes de gestion de données.
+                </p>
+                <a href="#" class="btn">Lire la suite</a>
+            </div>
+
+            <div class="skills-box">
+                <i class='bx bx-code'></i>
+                <h3>Fondamentaux du développement web</h3>
+                <p>Maîtrise solide de HTML, CSS et JavaScript avec expérience dans la conception d'un HTML sémantique, 
+                   d'un CSS moderne et attrayant, ainsi que d'un JavaScript interactif et dynamique. 
+                   Capable de créer des expériences web engageantes et conviviales.
+                </p>
+                <a href="#" class="btn">Lire la suite</a>
+            </div>
+
+
+            <div class="skills-box">
+                <i class='bx bx-terminal' ></i>
+                <h3>Compétent en Linux</h3>
+                <p>Compréhension approfondie de Linux et de son interface en ligne de commande.
+                    Maîtrise de la navigation et de la manipulation du système de fichiers, ainsi que de la résolution des problèmes courants.
+                    En conséquence, je suis confiant dans ma capacité à travailler avec des systèmes basés sur Linux.
+                </p>
+                <a href="#" class="btn">Lire la suite</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Récents <span>Projects</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="/images/portfolio1.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Premier Project</h4>
+                    <p>Description du Project</p>
+                    <a href="#"><i class='bx bx-link' ></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/portfolio2.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Deuxième project</h4>
+                    <p>Description du Project</p>
+                    <a href="#"><i class='bx bx-link' ></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/portfolio3.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Troisième project</h4>
+                    <p>Description du Project</p>
+                    <a href="#"><i class='bx bx-link' ></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/portfolio5.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Quatrième project</h4>
+                    <p>Description du Project</p>
+                    <a href="#"><i class='bx bx-link' ></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="/images/portfolio6.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Cinquième project</h4>
+                    <p>Description du Project</p>
+                    <a href="#"><i class='bx bx-link' ></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading"><span>Contactez-moi</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input id="fullname" type="text" placeholder="Nom complet" required>
+                <input id="email" type="email" placeholder="Adresse e-mail" required>
+            </div>
+            <div class="input-box">
+                <input id="phone" type="number" placeholder="Numéro de téléphone" required>
+                <input id="subject" type="text" placeholder="Objet du courriel" required>
+            </div>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre Message" required></textarea>
+            <div id="message-container"></div>
+            <button type="submit" value="Send Message" class="btn">envoyer un message</button>
+        </form>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Créé par Yassine | Tous droits réservés</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+        
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
