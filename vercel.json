@@ -1,6 +1,6 @@
 {
     "builds": [
-      { "src": "*.js", "use": "@vercel/node@v16.17.0" }
+      { "src": "*.js", "use": "@vercel/node" }
     ],
     "routes": [
       { "src": "/fr", "dest": "/index_fr.html" },
