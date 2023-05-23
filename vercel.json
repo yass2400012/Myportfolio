@@ -1,6 +1,6 @@
 {
     "builds": [
-      { "src": "app.js", "use": "@vercel/node" },
+      { "src": "app.js", "use": "@vercel/static-build" },
       { "src": "server.js", "use": "@vercel/node" }
     ],
     "routes": [
@@ -10,5 +10,5 @@
       { "src": "/fr/(.*)", "dest": "/index_fr.html" },
       { "src": "/:path*", "dest": "/index.html" }
     ]
-  }
+}
   
