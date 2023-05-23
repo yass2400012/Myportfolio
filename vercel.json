@@ -1,12 +1,12 @@
 {
     "builds": [
-        { "src": "index.js", "use": "@vercel/node@v16.17.0" }
+      { "src": "*.js", "use": "@vercel/node@v16.17.0" }
     ],
     "routes": [
-      { "source": "/fr", "destination": "/index_fr.html" },
-      { "source": "/fr/(.*)", "destination": "/index_fr.html" },
-      { "source": "/:path*", "destination": "/index.html" },
-      { "source": "/(.*)", "destination": "/index.js" }
+      { "src": "/fr", "dest": "/index_fr.html" },
+      { "src": "/fr/(.*)", "dest": "/index_fr.html" },
+      { "src": "/:path*", "dest": "/index.html" },
+      { "src": "/(.*)", "dest": "/index.js" }
     ]
-}
+  }
   
