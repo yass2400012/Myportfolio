@@ -2,7 +2,8 @@
     "rewrites": [
       { "source": "/fr", "destination": "/index_fr.html" },
       { "source": "/fr/(.*)", "destination": "/index_fr.html" },
-      { "source": "/:path*", "destination": "/index.html" }
+      { "source": "/:path*", "destination": "/index.html" },
+      { "source": "/api/(.*)", "destination": "/index.js" }
     ]
 }
   
