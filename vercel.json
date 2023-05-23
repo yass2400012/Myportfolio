@@ -1,8 +1,10 @@
 {
-    "rewrites": [
-      { "source": "/fr", "destination": "/index_fr.html" },
-      { "source": "/fr/(.*)", "destination": "/index_fr.html" },
-      { "source": "/:path*", "destination": "/index.html" }
+    "routes": [
+      { "src": "/app.js", "dest": "/app.js" },
+      { "src": "/server.js", "dest": "/server.js" },
+      { "src": "/fr", "dest": "/index_fr.html" },
+      { "src": "/fr/(.*)", "dest": "/index_fr.html" },
+      { "src": "/:path*", "dest": "/index.html" }
     ]
 }
   
