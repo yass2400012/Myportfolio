@@ -1,9 +1,12 @@
 {
-    "rewrites": [
+    "builds": [
+        { "src": "app.js", "use": "@vercel/node@v16.17.0" }
+    ],
+    "routes": [
       { "source": "/fr", "destination": "/index_fr.html" },
       { "source": "/fr/(.*)", "destination": "/index_fr.html" },
       { "source": "/:path*", "destination": "/index.html" },
-      { "source": "/api/(.*)", "destination": "/index.js" }
+      { "source": "/(.*)", "destination": "/index.js" }
     ]
 }
   
