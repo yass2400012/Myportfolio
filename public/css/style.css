@@ -20,7 +20,7 @@
 
 html {
     font-size: 62.5%;
-    overflow: auto;
+    overflow-x: hidden;
 }
 
 body {
@@ -207,12 +207,14 @@ span {
 }
 
 .about {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     background: var(--second-bg-color);
+    padding: 10rem 40px 20px 40px;
+    box-sizing: border-box;
 }
 
 .about-img img {
@@ -227,55 +229,75 @@ span {
     text-align: center;
     font-size: 4.5rem;
 }
-
-.about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px;
-    box-sizing: border-box;
-  }
   
-  .about-content {
+.about-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     background-color: var(--bg-color);
-    padding: 40px;
+    padding: 15px 40px 10px 40px;
     border-radius: 8px;
-  }
+}
+
+#left-box {
+    flex-basis: 50%;
+    margin-right: 20px;
+}
   
-  .about-content h2.heading {
+#right-box {
+    flex-basis: 50%;
+} 
+  
+.about-content h2.heading {
     font-size: 36px;
     color: #333;
-    margin-bottom: 40px;
-  }
+    margin-bottom: 10px;
+}
   
-  .about-content h2.heading span {
+.about-content h2.heading span {
     color: var(--main-color);
-  }
+}
   
-  .about-content h3 {
+.about-content h3 {
     font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+    color: var(--text-color);
+    margin-bottom: 10px;
   }
   
-  .about-content p {
+.about-content p {
     font-size: 16px;
     color: #666;
     line-height: 1.6;
-    margin-bottom: 30px;
-  }
+    margin-bottom: 15px;
+}
   
-  .about-content p span {
+.about-content p span {
     font-weight: bold;
-  }
-  
+    
+}
 
-.skills h2 {
-    margin-bottom: 5rem;
+.about-content ul.list-courses {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 0;
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+.about-content ul.list-courses li {
+    font-size: 18px;
+    margin-left: 0;
+    display: flex;
+    font-weight: bold;
+}
+
+.about-content ul.list-courses li:before {
+    content: '\2022';
+    margin-right: 5px;
+}
+
+.skills {
+    padding: 114px;
 }
 
 .skills-container {
@@ -485,134 +507,142 @@ span {
 
 @media (max-width: 1200px) {
     html {
-        font-size: 55%;
+      font-size: 55%;
     }
-}
-
-@media (max-width: 991px) {
+  }
+  
+  @media (max-width: 991px) {
     .header {
-        padding: 2rem 3%;
+      padding: 2rem 3%;
     }
-
+  
     .section {
-        padding: 10rem 3% 2rem;
+      padding: 10rem 3% 2rem;
     }
-
-    .skills {
-        padding-bottom: 7rem;
-    }
-
+  
+    .skills,
     .portfolio {
-        padding-bottom: 7rem;
+      padding-bottom: 7rem;
     }
-
+  
     .contact {
-        min-height: auto;
+      min-height: auto;
     }
-
+  
     .footer {
-        padding: 2rem 3%;
+      padding: 2rem 3%;
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     #menu-icon {
-        display: block;
+      display: block;
     }
-
+  
     .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 3%;
+      background: var(--bg-color);
+      border-top: .1rem solid rgba(0, 0, 0, .2);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+      display: none;
     }
-
+  
     .navbar.active {
-        display: block;
+      display: block;
     }
-
+  
     .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
+      display: block;
+      font-size: 2rem;
+      margin: 3rem 0;
     }
-
+  
     .home {
-        flex-direction: column;
+      flex-direction: column;
     }
-
+  
     .home-content h3 {
-        font-size: 2.6rem;
+      font-size: 2.6rem;
     }
-
+  
     .home-content h1 {
-        font-size: 5rem;
+      font-size: 5rem;
     }
-
+  
     .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
+      width: 70vw;
+      margin-top: 4rem;
     }
-
+  
     .about {
-        flex-direction: column-reverse;
-    }
-
-    .about img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
-
-    .skills h2 {
-        margin-bottom: 3rem;
-    }
-
-    .portfolio h2 {
-        margin-bottom: 3rem;
-    }
-
-    .portfolio-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 617px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-
-    .contact form .input-box input {
-        width: 100%;
-    }
-}
-
-@media (max-width: 365px) {
-    .home-img img {
-        width: 90vw;
-    }
-
-    .about-img img {
-        width: 90vw;
-    }
-
-    .footer {
-        flex-direction: column-reverse;
-    }
-
-    .footer p {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        margin-top: 2rem;
+      }
+    
+      .about img {
+        width: 70vw;
+        margin: 4rem 0;
+      }
+    
+      .about-content {
+        margin: 0;
+      }
+    
+      .about-content h2 {
+        font-size: 3.2rem;
+      }
+    
+      .about-content p {
+        font-size: 1.8rem;
     }
-}
-
+  
+    .skills h2,
+    .portfolio h2 {
+      margin-bottom: 3rem;
+    }
+  
+    .portfolio-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 617px) {
+    .portfolio-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  
+    .contact form .input-box input {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 365px) {
+    .home-img img,
+    .about-img img {
+      width: 90vw;
+      margin: 2rem 0;
+    }
+  
+    .footer {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  
+    .footer p {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+  

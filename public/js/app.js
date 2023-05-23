@@ -1,46 +1,36 @@
-// Function to handle language switching
 function switchLanguage(language) {
-    // Get the current page URL
     let currentUrl = window.location.href;
     
-    // Check the language parameter in the URL
     let url;
     if (language === 'fr') {
-      // Set the French version URL
+      
       url = currentUrl.replace('/public/index.html', '/public/index_fr.html');
     } else if (language === 'eng') {
-      // Set the English version URL
+      
       url = currentUrl.replace('/public/index_fr.html', '/public/index.html');
     }
     
-    // Redirect to the new language version
     window.location.href = url;
   }
   
-  // Event listener for language options
   const languageOptions = document.getElementsByClassName('language-option');
   for (let i = 0; i < languageOptions.length; i++) {
     languageOptions[i].addEventListener('click', function () {
       const language = this.dataset.language;
       
-      // Update active language option
       for (let j = 0; j < languageOptions.length; j++) {
         languageOptions[j].classList.remove('active');
       }
       this.classList.add('active');
       
-      // Save the selected language in local storage
       localStorage.setItem('selectedLanguage', language);
       
-      // Switch language
       switchLanguage(language);
     });
   }
-  
-  // Check if a language is selected from previous sessions
+
   const selectedLanguage = localStorage.getItem('selectedLanguage');
   if (selectedLanguage) {
-    // Update active language option based on the stored value
     for (let i = 0; i < languageOptions.length; i++) {
       const language = languageOptions[i].dataset.language;
       if (language === selectedLanguage) {
@@ -50,12 +40,9 @@ function switchLanguage(language) {
     }
 }
 
-
-
 const form = document.querySelector('form');
 const messageContainer = document.getElementById('message-container');
 
-// Function to validate email and phone number format
 function validateInputs(fullName, email, phoneNumber, subject, message) {
   const fields = [
     { value: fullName, fieldName: 'Full Name' },
@@ -83,103 +70,53 @@ function validateInputs(fullName, email, phoneNumber, subject, message) {
   return true;
 }
 
-// Function to handle form submission
 function handleSubmit(event) {
-    event.preventDefault();
-  
-    // Get the input values
-    const fullName = document.getElementById('fullname').value;
-    const email = document.getElementById('email').value;
-    const phoneNumber = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-  
-    // Validate inputs
-    if (!validateInputs(fullName, email, phoneNumber, subject, message)) {
-      return;
-    }
-  
-    // Set the parameters for sending the email using emailJs
-    const templateParams = {
-        fullName: fullName,
-        email: email,
-        phoneNumber: phoneNumber,
-        subject: subject,
-        message: message
-    };
-  
-    // Send the email using emailJs
-    emailjs.send('portfolioapp', 'template_jof43jp', templateParams, 'ahoMvl5-Kh3HDyC7t')
-      .then(function(response) {
-        console.log('Email sent:', response.status, response.text);
-        if (response.status === 200) {
-          alert('Email sent');
-          document.getElementById('fullname').value = '';
-          document.getElementById('email').value = '';
-          document.getElementById('phone').value = '';
-          document.getElementById('subject').value = '';
-          document.getElementById('message').value = '';
-        } else {
-          alert('Something went wrong');
-        }
-      }, function(error) {
-        console.error('Error sending email:', error);
-        alert('Something went wrong');
-      });
-  
-    showMessage('Message sent successfully', 'success');
-}
-  
+  event.preventDefault();
 
-function saveInputs(fullName, email, phoneNumber, subject, message) {
-  // Save inputs to local storage
-  localStorage.setItem('fullName', fullName);
-  localStorage.setItem('email', email);
-  localStorage.setItem('phone', phoneNumber);
-  localStorage.setItem('subject', subject);
-  localStorage.setItem('message', message);
-}
+  const fullName = document.getElementById('fullname').value;
+  const email = document.getElementById('email').value;
+  const phoneNumber = document.getElementById('phone').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
 
-function showMessage(message, type) {
-  messageContainer.textContent = message;
-  messageContainer.classList.add(type);
-
-  // Clear the message after 3 seconds
-  setTimeout(() => {
-    messageContainer.textContent = '';
-    messageContainer.classList.remove(type);
-  }, 3000);
-}
-
-// Add form submission event listener
-form.addEventListener('submit', handleSubmit);
-
-// Check if input was sent locally
-function checkLocalStorage() {
-  const fullName = localStorage.getItem('fullName');
-  const email = localStorage.getItem('email');
-  const phone = localStorage.getItem('phone');
-  const subject = localStorage.getItem('subject');
-  const message = localStorage.getItem('message');
-
-  if (fullName && email && phone && subject && message) {
-    // Inputs were sent and stored locally
-    // You can perform further actions or display a success message
-    console.log('Input was sent and stored locally:');
-    console.log('Full Name:', fullName);
-    console.log('Email:', email);
-    console.log('Phone:', phone);
-    console.log('Subject:', subject);
-    console.log('Message:', message);
-  } else {
-    // Inputs were not sent or stored locally
-    // You can display an error message or handle it accordingly
-    console.log('Input was not sent or stored locally.');
+  if (!validateInputs(fullName, email, phoneNumber, subject, message)) {
+    return;
   }
+
+  const requestData = {
+    fullName: fullName,
+    email: email,
+    phoneNumber: phoneNumber,
+    subject: subject,
+    message: message
+  };
+
+  fetch('/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(requestData)
+  })
+    .then(function(response) {
+      if (response.ok) {
+        return response.text();
+      } else {
+        throw new Error('Something went wrong');
+      }
+    })
+    .then(function(data) {
+      console.log('Email sent:', data);
+      alert('Email sent');
+      form.reset();
+    })
+    .catch(function(error) {
+      console.error('Error sending email:', error);
+      alert('Something went wrong');
+    });
 }
 
-// Call the checkLocalStorage function
-checkLocalStorage();
+form.addEventListener('submit', handleSubmit);
 
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
@@ -216,7 +153,6 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 
 };
-
 
 ScrollReveal({
     distance: '80px',
