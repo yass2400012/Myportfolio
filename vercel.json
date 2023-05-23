@@ -1,9 +1,4 @@
 {
-    "functions": {
-      "api/**/*": {
-        "runtime": "@vercel/node@v16.17.0"
-      }
-    },
     "rewrites": [
       { "source": "/fr", "destination": "/index_fr.html" },
       { "source": "/fr/(.*)", "destination": "/index_fr.html" },
