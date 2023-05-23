@@ -1,7 +1,7 @@
 {
     "builds": [
-      { "src": "app.js", "use": "@now/node-server" },
-      { "src": "server.js", "use": "@now/node-server" }
+      { "src": "app.js", "use": "@vercel/node" },
+      { "src": "server.js", "use": "@vercel/node" }
     ],
     "routes": [
       { "src": "/app.js", "dest": "/app.js" },
@@ -10,5 +10,5 @@
       { "src": "/fr/(.*)", "dest": "/index_fr.html" },
       { "src": "/:path*", "dest": "/index.html" }
     ]
-}
+  }
   
