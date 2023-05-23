@@ -1,13 +1,12 @@
 {
     "builds": [
-        { "src": "app.js", "use": "@vercel/node" },
-        { "src": "server.js", "use": "@vercel/node" },
-        { "src": "/public/**", "use": "@vercel/static" }
-      ],
-      "routes": [
-      { "src": "/fr", "dest": "/index_fr.html" },
-      { "src": "/fr/(.*)", "dest": "/index_fr.html" },
-      { "src": "/:path*", "dest": "/index.html" }
+      { "src": "/app.js", "use": "@vercel/node" },
+      { "src": "/server.js", "use": "@vercel/node" }
+    ],
+    "rewrites": [
+      { "source": "/fr", "destination": "/index_fr.html" },
+      { "source": "/fr/(.*)", "destination": "/index_fr.html" },
+      { "source": "/:path*", "destination": "/index.html" }
     ]
 }
   
