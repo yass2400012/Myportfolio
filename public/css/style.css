@@ -63,9 +63,10 @@ section {
 }
   
 .navbar a {
-    font-size: 1.7rem;
+    font-size: 2rem;
     color: var(--text-color);
     margin-left: 4rem;
+    font-weight: 500;
 }
   
 .navbar a:hover {
