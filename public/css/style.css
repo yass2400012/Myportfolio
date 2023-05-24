@@ -145,6 +145,11 @@ section {
     left: 50%;
 }
 
+.home-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
