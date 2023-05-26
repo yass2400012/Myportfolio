@@ -342,6 +342,7 @@ span {
 
 .skills-box h3 {
     font-size: 2.6rem;
+    margin-bottom: 10px;
 }
 
 .skills-box {
@@ -349,6 +350,27 @@ span {
     margin: 1rem 0 3rem;
 }
 
+.skills-box ul.list-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+  
+.skills-box ul.list-skills li {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+.skills-box ul.list-skills li:before {
+    content: '\2022';
+    margin-right: 5px;
+}
+  
 .portfolio {
     background: var(--second-bg-color);
 }
