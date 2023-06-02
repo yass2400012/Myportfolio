@@ -60,6 +60,7 @@ section {
 .navbar {
     display: flex;
     align-items: center;
+    transform: translateZ(0);
 }
   
 .navbar a {
@@ -67,6 +68,7 @@ section {
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
+    transition: color 2s ease;
 }
   
 .navbar a:hover {
@@ -258,12 +260,17 @@ span {
   
 #right-box {
     flex-basis: 50%;
+    padding-top: 25px;
+} 
+
+#right-box p {
+    padding-top: 15px;
 } 
   
 .about-content h2.heading {
     font-size: 36px;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
   
 .about-content h2.heading span {
@@ -588,6 +595,20 @@ span {
         max-width: 90%;
         height: 95%;
     }
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+      
+    .about-content {
+        margin: 0;
+        width: 100%;
+    }
+      
+    .about-content:nth-child(2) {
+        margin-top: 2rem; /* Add some space between the boxes */
+    }
      
     .section {
       padding: 10rem 3% 2rem;
@@ -659,8 +680,15 @@ span {
     
     .about {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+      }
+      
+    .about-content {
+        margin: 0;
+        width: 100%;
+    }
+      
+    .about-content:nth-child(2) {
+        margin-top: 2rem; /* Add some space between the boxes */
     }
     
     .about-content {
@@ -706,9 +734,10 @@ span {
     }
     .about-content {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
-      }
+    }
     
     #left-box, #right-box {
         flex-basis: 100%;
@@ -740,38 +769,52 @@ span {
 }      
 
 @media (max-width: 580px) {
-    section {
-        min-width: 60vh;
+    body {
+        overflow-x: hidden;
     }
-    
     .home {
-        flex-direction: column;
+      flex-direction: column;
+      padding-bottom: 90vh;
     }
-    
+  
     .home-content {
-        order: 2;
+      order: 2;
+      max-width: 100%;
+      padding-top: 50px;
     }
-    
+  
+    .home-img {
+      order: 1;
+      width: 100%;
+      height: 115vh;
+    }
+  
     .home-img img {
-        order: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
-    
-    .home-content h1 {
-        font-size: 5rem;
+
+    .home-img .shape {
+        max-width: 100%;
+        height: 70%;
     }
-    
-    .home-content h3 {
-        font-size: 2.6rem;
+    .home-img .picture {
+        max-width: 75%;
+        height: 70%;
     }
-    
-    .home-img img {
-        width: 70vw;
+    .home-img:hover .picture {
+        transform: translateX(-55%);
     }
     
     .about {
         flex-direction: column-reverse;
     }
 
+    .skills {
+        padding: 50px 50px 50px 50px;
+    }
     .skills-box {
         min-width: 50vh; 
     }
@@ -785,6 +828,9 @@ span {
 }
 
 @media (max-width: 389px) {
+    body {
+        overflow-x: hidden;
+    }
     .home {
       flex-direction: column;
       padding-bottom: 70vh;
@@ -819,6 +865,7 @@ span {
     }
     .home-img:hover .picture {
         transform: translateX(-55%);
-    } 
+    }
   }
+
   
