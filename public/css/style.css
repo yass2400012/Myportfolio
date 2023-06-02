@@ -831,7 +831,13 @@ span {
     body {
         overflow-x: hidden;
     }
+    section {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .home {
+      padding-left: auto;
+      padding-right: auto;
       flex-direction: column;
       padding-bottom: 70vh;
     }
@@ -866,6 +872,5 @@ span {
     .home-img:hover .picture {
         transform: translateX(-55%);
     }
-  }
+}
 
-  
