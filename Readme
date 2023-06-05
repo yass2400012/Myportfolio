@@ -1,0 +1,4 @@
+In developing my portfolio website, I made a deliberate choice to work with HTML, CSS, and plain JavaScript instead of incorporating frameworks like React. 
+This decision was driven by my desire to gain more practice and solidify my proficiency in the core fundamentals of web development. 
+Furthermore, in the Contact Me form, 
+I utilized Node.js with Express.js to handle server-side operations and integrated Nodemailer for seamless email functionality
