@@ -421,8 +421,8 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
-    max-width: 500px; /* Adjust the maximum width for larger boxes */
-    height: 500px;
+    max-width: 600px; /* Adjust the maximum width for larger boxes */
+    height: 400px;
     margin: 0 auto; 
 }
 
