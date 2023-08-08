@@ -402,7 +402,7 @@ span {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 2.5rem; 
+    gap: 2.5rem;
 }
 
 .portfolio-container .portfolio-box {
@@ -411,13 +411,10 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    max-width: 500px; /* Adjust the maximum width for larger boxes */
+    margin: 0 auto;
 }
 
-.portfolio-box {
-    max-width: 600px; 
-    margin: 0 auto; 
-}
-  
 .portfolio-box img {
     width: 100%;
     transition: .5s ease;
