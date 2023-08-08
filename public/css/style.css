@@ -387,12 +387,12 @@ span {
   
 .portfolio {
     background: var(--second-bg-color);
-    padding-bottom: 100px;
+    padding-bottom: 130px;
 }
 
 .portfolio h2 {
     margin-top: 0rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .portfolio h2 .heading {
